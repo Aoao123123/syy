@@ -4,12 +4,20 @@ import com.aoao.domain.PatientLv1;
 import com.aoao.domain.PatientLv2;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
- * 持久層接口，實現類以代理對象形式配置到映射配置文件中
+ * 持久層接口，實現類對象以代理對象形式配置到映射配置文件中
  */
 @Repository
 public interface IPatientDao {
 
+
+    /**
+     * 查詢所有病人的住院號
+     * @return
+     */
+    List<String> findAllPatientNumber();
 
     /**
      * 根據住院號查詢病人
@@ -47,4 +55,10 @@ public interface IPatientDao {
      * @param patientLv2
      */
     void deletePatientLv2Info(PatientLv2 patientLv2);
+
+    /**
+     * 根據住院號刪除病人的整個二級表記錄
+     * @param patientLv2
+     */
+    void deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2);
 }

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * 表現層
  */
@@ -18,6 +20,11 @@ public class PatientController {
     @Autowired
     private IPatientService patientService;
 
+    @RequestMapping(path = "/findAllPatientNumber")
+    public @ResponseBody List<String>  findAllPatientNumber(){
+        return patientService.findAllPatientNumber();
+    }
+
     @RequestMapping(path = "/findByPatientNumber")
     public @ResponseBody PatientLv1 findPatientByPatientNumber(String patient_number_lv1){
         PatientLv1 patient = patientService.findPatientByPatientNumber(patient_number_lv1);
@@ -26,63 +33,89 @@ public class PatientController {
     }
 
     @RequestMapping(path = "/updatePatientLv1")
-    public @ResponseBody boolean updatePatientLv1Info(PatientLv1 patientLv1){
+    public @ResponseBody String updatePatientLv1Info(PatientLv1 patientLv1){
         System.out.println("病人的一級表更新記錄....");
         if (patientLv1.getPatient_number_lv1() == null){
-            System.out.println("病人一級表更新記錄時未傳入patient_number_lv1");
-            return false;
+            return "incoming patient_number_lv1 is null";
+        }
+
+        List<String> listPatientNumber = findAllPatientNumber();
+        if (!listPatientNumber.contains(patientLv1.getPatient_number_lv1())){
+            return "This patient doesn't exist";
         }
 
         patientService.updatePatientLv1Info(patientLv1);
-        return true;
+        return "A recording in patient_lv1 is updated successfully";
     }
 
     @RequestMapping(path = "/insertPatientLv1")
-    public @ResponseBody boolean insertPatientLv1Info(PatientLv1 patientLv1){
+    public @ResponseBody String insertPatientLv1Info(PatientLv1 patientLv1){
         System.out.println("病人的一級表新增記錄....");
-        if (patientLv1.getPatient_number_lv1() == null && patientLv1.getName() == null){
-            System.out.println("病人的一級表更新記錄時未傳入patient_number_lv1和name");
-            return false;
+        if (patientLv1.getPatient_number_lv1() == null || patientLv1.getName() == null){
+            return "incoming patient_number_lv1 or name is null";
         }
 
         patientService.insertPatientLv1Info(patientLv1);
-        return true;
+        return "A recording in patient_lv1 is inserted successfully";
     }
 
     @RequestMapping(path = "/updatePatientLv2")
-    public @ResponseBody boolean updatePatientLv2Info(PatientLv2 patientLv2){
+    public @ResponseBody String updatePatientLv2Info(PatientLv2 patientLv2){
         System.out.println("病人的二級表更新記錄....");
-        if (patientLv2.getPatient_number_lv2() == null && patientLv2.getRepresent() == null){
-            System.out.println("病人二級表更新記錄時未傳入patient_number_lv2或represent");
-            return false;
+        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null){
+            return "incoming patient_number_lv2 or represent is null";
+        }
+
+        List<String> listPatientNumber = findAllPatientNumber();
+        if (!listPatientNumber.contains(patientLv2.getPatient_number_lv2())){
+            return "This patient doesn't exist";
         }
 
         patientService.updatePatientLv2Info(patientLv2);
-        return true;
+        return "A recording in patient_lv2 is updated successfully";
     }
 
     @RequestMapping(path = "/insertPatientLv2")
-    public @ResponseBody boolean insertPatientLv2Info(PatientLv2 patientLv2){
+    public @ResponseBody String insertPatientLv2Info(PatientLv2 patientLv2){
         System.out.println("病人的二級表新增記錄....");
-        if ((patientLv2.getPatient_number_lv2() == null && patientLv2.getRepresent() == null)
+        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null
                 || patientLv2.getCheckbox_binary() == null){
-            System.out.println("病人二級表新增記錄時未傳入patient_number_lv2,checkbox_binary或represent");
-            return false;
+            return "patient_number_lv2,represent or checkbox_binary is null";
         }
 
         patientService.insertPatientLv2Info(patientLv2);
-        return true;
+        return "The record is inserted successfully in patient_lv2 ";
     }
 
     @RequestMapping(path = "/deletePatientLv2")
-    public @ResponseBody boolean deletePatientLv2Info(PatientLv2 patientLv2){
+    public @ResponseBody String deletePatientLv2Info(PatientLv2 patientLv2){
         System.out.println("病人的二級表刪除記錄....");
-        if (patientLv2.getPatient_number_lv2() == null && patientLv2.getRepresent() == null){
-            System.out.println("病人二級表刪除記錄時未傳入patient_number_lv2或represent");
-            return false;
+        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null){
+            return "incoming patient_number_lv2 or represent is null";
+        }
+
+        List<String> listPatientNumber = findAllPatientNumber();
+        if (!listPatientNumber.contains(patientLv2.getPatient_number_lv2())){
+            return "This patient doesn't exist";
         }
 
         patientService.deletePatientLv2Info(patientLv2);
-        return true;
+        return "The record is deleted successfully from patient_lv2";
+    }
+
+    @RequestMapping(path = "/deletePatientLv2ByPatientNumber")
+    public @ResponseBody String deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2) {
+        System.out.println("病人的二級表按住院號刪除記錄....");
+        if (patientLv2.getPatient_number_lv2() == null){
+            return "incoming patient_number_lv2 is null";
+        }
+
+        List<String> listPatientNumber = findAllPatientNumber();
+        if (!listPatientNumber.contains(patientLv2.getPatient_number_lv2())){
+            return "This patient doesn't exist";
+        }
+
+        patientService.deletePatientLv2InfoWithPatientNumber(patientLv2);
+        return "The recordings are successfully deleted from patient_lv2 according to the patient number";
     }
 }

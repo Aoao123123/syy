@@ -7,6 +7,8 @@ import com.aoao.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * 業務層實現類
  * 事務控制應該都在業務層
@@ -17,6 +19,11 @@ public class PatientServiceImpl implements IPatientService {
 
     @Autowired
     private IPatientDao patientDao;
+
+    @Override
+    public List<String> findAllPatientNumber() {
+        return patientDao.findAllPatientNumber();
+    }
 
     @Override
     public PatientLv1 findPatientByPatientNumber(String patient_number_lv1) {
@@ -37,8 +44,8 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void insertPatientLv1Info(PatientLv1 patientLv1) {
-        if (patientLv1.getPatient_number_lv1() == null && patientLv1.getName() == null){
-            System.out.println("病人一級表新增記錄時未傳入patient_number_lv1和name");
+        if (patientLv1.getPatient_number_lv1() == null || patientLv1.getName() == null){
+            System.out.println("病人一級表新增記錄時未傳入patient_number_lv1或name");
             return;
         }
 
@@ -48,8 +55,8 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void updatePatientLv2Info(PatientLv2 patientLv2) {
-        if (patientLv2.getPatient_number_lv2() == null && patientLv2.getRepresent() == null){
-            System.out.println("病人二級表更新記錄時未傳入patient_number_lv2和represent");
+        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null){
+            System.out.println("病人二級表更新記錄時未傳入patient_number_lv2或represent");
             return;
         }
 
@@ -59,7 +66,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void insertPatientLv2Info(PatientLv2 patientLv2) {
-        if ((patientLv2.getPatient_number_lv2() == null && patientLv2.getRepresent() == null)
+        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null
             || patientLv2.getCheckbox_binary() == null){
             System.out.println("病人二級表新增記錄時未傳入patient_number_lv2,represent或checkbox_binary");
             return;
@@ -71,12 +78,23 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void deletePatientLv2Info(PatientLv2 patientLv2) {
-        if (patientLv2.getPatient_number_lv2() == null && patientLv2.getRepresent() == null){
-            System.out.println("病人二級表刪除記錄時未傳入patient_number_lv2和represent");
+        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null){
+            System.out.println("病人二級表刪除記錄時未傳入patient_number_lv2或represent");
             return;
         }
 
         patientDao.deletePatientLv2Info(patientLv2);
         System.out.println("病人二級表刪除記錄成功");
+    }
+
+    @Override
+    public void deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2) {
+        if (patientLv2.getPatient_number_lv2() == null){
+            System.out.println("病人二級表按住院號刪除時未傳入patient_number_lv2");
+            return;
+        }
+
+        patientDao.deletePatientLv2InfoWithPatientNumber(patientLv2);
+        System.out.println("病人二級表按住院號刪除成功");
     }
 }

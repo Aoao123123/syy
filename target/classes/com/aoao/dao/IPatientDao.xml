@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--映射配置文件-->
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -50,6 +51,9 @@
         </collection>
     </resultMap>
 
+    <select id="findAllPatientNumber" resultType="String">
+        select patient_number_lv1 from patient_lv1
+    </select>
     <select id="findPatientByPatientNumber" parameterType="String" resultMap="patient12Map">
         select * from patient_lv1 patient1 left outer join patient_lv2 patient2
         on patient1.patient_number_lv1 = patient2.patient_number_lv2
@@ -81,6 +85,10 @@
 
     <delete id="deletePatientLv2Info" parameterType="com.aoao.domain.PatientLv2">
         delete from patient_lv2 where patient_number_lv2 = #{patient_number_lv2} and represent = #{represent}
+    </delete>
+
+    <delete id="deletePatientLv2InfoWithPatientNumber" parameterType="com.aoao.domain.PatientLv2">
+        delete from patient_lv2 where patient_number_lv2 = #{patient_number_lv2}
     </delete>
 
 </mapper>
