@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 public class PatientLv2 implements Serializable {
 
-    private String patient_number_lv2;
+    private int patient_number_lv2;
     private String checkbox_binary;
     private String remark;
     private String represent;
 
-    public String getPatient_number_lv2() {
+    public int getPatient_number_lv2() {
         return patient_number_lv2;
     }
 
-    public void setPatient_number_lv2(String patient_number_lv2) {
+    public void setPatient_number_lv2(int patient_number_lv2) {
         this.patient_number_lv2 = patient_number_lv2;
     }
 

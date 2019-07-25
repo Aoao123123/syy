@@ -6,7 +6,7 @@ import java.util.List;
 
 public class PatientLv1 implements Serializable {
 
-    private String patient_number_lv1;
+    private int patient_number_lv1;
     private String name;
     private String department;
     private String bed_number;
@@ -47,11 +47,11 @@ public class PatientLv1 implements Serializable {
 
     private List<PatientLv2> patientLv2List;
 
-    public String getPatient_number_lv1() {
+    public int getPatient_number_lv1() {
         return patient_number_lv1;
     }
 
-    public void setPatient_number_lv1(String patient_number_lv1) {
+    public void setPatient_number_lv1(int patient_number_lv1) {
         this.patient_number_lv1 = patient_number_lv1;
     }
 
