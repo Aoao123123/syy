@@ -35,7 +35,7 @@ public class PatientController {
     @RequestMapping(path = "/updatePatientLv1")
     public @ResponseBody String updatePatientLv1Info(PatientLv1 patientLv1){
         System.out.println("病人的一級表更新記錄....");
-        if (patientLv1.getPatient_number_lv1() == null){
+        if (patientLv1.getPatient_number_lv1() == 0){
             return "incoming patient_number_lv1 is null";
         }
 
@@ -51,7 +51,7 @@ public class PatientController {
     @RequestMapping(path = "/insertPatientLv1")
     public @ResponseBody String insertPatientLv1Info(PatientLv1 patientLv1){
         System.out.println("病人的一級表新增記錄....");
-        if (patientLv1.getPatient_number_lv1() == null || patientLv1.getName() == null){
+        if (patientLv1.getPatient_number_lv1() == 0 || patientLv1.getName() == null){
             return "incoming patient_number_lv1 or name is null";
         }
 
@@ -62,7 +62,7 @@ public class PatientController {
     @RequestMapping(path = "/updatePatientLv2")
     public @ResponseBody String updatePatientLv2Info(PatientLv2 patientLv2){
         System.out.println("病人的二級表更新記錄....");
-        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null){
+        if (patientLv2.getPatient_number_lv2() == 0 || patientLv2.getRepresent() == null){
             return "incoming patient_number_lv2 or represent is null";
         }
 
@@ -78,7 +78,7 @@ public class PatientController {
     @RequestMapping(path = "/insertPatientLv2")
     public @ResponseBody String insertPatientLv2Info(PatientLv2 patientLv2){
         System.out.println("病人的二級表新增記錄....");
-        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null
+        if (patientLv2.getPatient_number_lv2() == 0 || patientLv2.getRepresent() == null
                 || patientLv2.getCheckbox_binary() == null){
             return "patient_number_lv2,represent or checkbox_binary is null";
         }
@@ -90,7 +90,7 @@ public class PatientController {
     @RequestMapping(path = "/deletePatientLv2")
     public @ResponseBody String deletePatientLv2Info(PatientLv2 patientLv2){
         System.out.println("病人的二級表刪除記錄....");
-        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null){
+        if (patientLv2.getPatient_number_lv2() == 0 || patientLv2.getRepresent() == null){
             return "incoming patient_number_lv2 or represent is null";
         }
 
@@ -106,7 +106,7 @@ public class PatientController {
     @RequestMapping(path = "/deletePatientLv2ByPatientNumber")
     public @ResponseBody String deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2) {
         System.out.println("病人的二級表按住院號刪除記錄....");
-        if (patientLv2.getPatient_number_lv2() == null){
+        if (patientLv2.getPatient_number_lv2() == 0){
             return "incoming patient_number_lv2 is null";
         }
 

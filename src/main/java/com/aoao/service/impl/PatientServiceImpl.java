@@ -33,7 +33,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void updatePatientLv1Info(PatientLv1 patientLv1) {
-        if (patientLv1.getPatient_number_lv1() == null){
+        if (patientLv1.getPatient_number_lv1() == 0){
             System.out.println("病人一級表更新時未傳入patient_number_lv1");
             return;
         }
@@ -44,7 +44,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void insertPatientLv1Info(PatientLv1 patientLv1) {
-        if (patientLv1.getPatient_number_lv1() == null || patientLv1.getName() == null){
+        if (patientLv1.getPatient_number_lv1() == 0 || patientLv1.getName() == null){
             System.out.println("病人一級表新增記錄時未傳入patient_number_lv1或name");
             return;
         }
@@ -55,7 +55,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void updatePatientLv2Info(PatientLv2 patientLv2) {
-        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null){
+        if (patientLv2.getPatient_number_lv2() == 0 || patientLv2.getRepresent() == null){
             System.out.println("病人二級表更新記錄時未傳入patient_number_lv2或represent");
             return;
         }
@@ -66,7 +66,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void insertPatientLv2Info(PatientLv2 patientLv2) {
-        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null
+        if (patientLv2.getPatient_number_lv2() == 0 || patientLv2.getRepresent() == null
             || patientLv2.getCheckbox_binary() == null){
             System.out.println("病人二級表新增記錄時未傳入patient_number_lv2,represent或checkbox_binary");
             return;
@@ -78,7 +78,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void deletePatientLv2Info(PatientLv2 patientLv2) {
-        if (patientLv2.getPatient_number_lv2() == null || patientLv2.getRepresent() == null){
+        if (patientLv2.getPatient_number_lv2() == 0 || patientLv2.getRepresent() == null){
             System.out.println("病人二級表刪除記錄時未傳入patient_number_lv2或represent");
             return;
         }
@@ -89,7 +89,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2) {
-        if (patientLv2.getPatient_number_lv2() == null){
+        if (patientLv2.getPatient_number_lv2() == 0){
             System.out.println("病人二級表按住院號刪除時未傳入patient_number_lv2");
             return;
         }
