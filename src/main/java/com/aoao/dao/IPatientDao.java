@@ -17,14 +17,14 @@ public interface IPatientDao {
      * 查詢所有病人的住院號
      * @return
      */
-    List<String> findAllPatientNumber();
+    List<Integer> findAllPatientNumber();
 
     /**
      * 根據住院號查詢病人
      * @param patient_number_lv1 病人的住院號
      * @return
      */
-    PatientLv1 findPatientByPatientNumber(String patient_number_lv1);
+    PatientLv1 findPatientByPatientNumber(Integer patient_number_lv1);
 
     /**
      * 增加病人一級表記錄
