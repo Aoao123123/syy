@@ -20,6 +20,12 @@ public interface IPatientDao {
     List<Integer> findAllPatientNumber();
 
     /**
+     * 查詢所有病人的問診記錄
+     * @return
+     */
+    List<PatientLv2> findAllAssessRecords();
+
+    /**
      * 根據住院號查詢病人
      * @param patient_number_lv1 病人的住院號
      * @return

@@ -54,6 +54,11 @@
     <select id="findAllPatientNumber" resultType="Integer">
         select patient_number_lv1 from patient_lv1
     </select>
+
+    <select id="findAllAssessRecords" resultType="com.aoao.domain.PatientLv2">
+        select patient_number_lv2,represent from patient_lv2
+    </select>
+
     <select id="findPatientByPatientNumber" parameterType="Integer" resultMap="patient12Map">
         select * from patient_lv1 patient1 left outer join patient_lv2 patient2
         on patient1.patient_number_lv1 = patient2.patient_number_lv2

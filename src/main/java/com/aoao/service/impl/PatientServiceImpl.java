@@ -27,6 +27,11 @@ public class PatientServiceImpl implements IPatientService {
     }
 
     @Override
+    public List<PatientLv2> findAllAssessRecords() {
+        return patientDao.findAllAssessRecords();
+    }
+
+    @Override
     public PatientLv1 findPatientByPatientNumber(Integer patient_number_lv1) {
         PatientLv1 patient = patientDao.findPatientByPatientNumber(patient_number_lv1);
         return patient;
@@ -80,8 +85,13 @@ public class PatientServiceImpl implements IPatientService {
             return "patient_number_lv2,represent or checkbox_binary is null";
         }
 
+        List<PatientLv2> listAllAccessRecords = findAllAssessRecords();
+        if (listAllAccessRecords.contains(patientLv2)){
+            return "This record has already been assessed";
+        }
+
         patientDao.insertPatientLv2Info(patientLv2);
-        return "The record is inserted successfully in patient_lv2 ";
+        return "The record is inserted successfully in patient_lv2";
     }
 
     @Override
@@ -91,8 +101,12 @@ public class PatientServiceImpl implements IPatientService {
         }
 
         List<Integer> listPatientNumber = findAllPatientNumber();
+        List<PatientLv2> listAllAccessRecords = findAllAssessRecords();
         if (!listPatientNumber.contains(patientLv2.getPatient_number_lv2())){
             return "This patient doesn't exist";
+        }
+        if (!listAllAccessRecords.contains(patientLv2)){
+            return "The assess record of the patient has already been deleted";
         }
 
         patientDao.deletePatientLv2Info(patientLv2);
@@ -112,7 +126,6 @@ public class PatientServiceImpl implements IPatientService {
         }
 
         patientDao.deletePatientLv2InfoWithPatientNumber(patientLv2);
-        System.out.println("病人二級表按住院號刪除成功");
         return "The recordings are successfully deleted from patient_lv2 according to the patient number";
     }
 }

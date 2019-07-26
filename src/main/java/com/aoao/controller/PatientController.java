@@ -25,6 +25,11 @@ public class PatientController {
         return patientService.findAllPatientNumber();
     }
 
+    @RequestMapping(path = "/findAllAssessRecords")
+    public @ResponseBody List<PatientLv2> findAllAssessRecords(){
+        return patientService.findAllAssessRecords();
+    }
+
     @RequestMapping(path = "/findByPatientNumber")
     public @ResponseBody PatientLv1 findPatientByPatientNumber(Integer patient_number_lv1){
         PatientLv1 patient = patientService.findPatientByPatientNumber(patient_number_lv1);

@@ -14,6 +14,12 @@ public interface IPatientService {
     List<Integer> findAllPatientNumber();
 
     /**
+     * 查詢所有病人的問診記錄
+     * @return
+     */
+    List<PatientLv2> findAllAssessRecords();
+
+    /**
      * 根據住院號查詢病人記錄
      * @param patient_number_lv1
      * @return
