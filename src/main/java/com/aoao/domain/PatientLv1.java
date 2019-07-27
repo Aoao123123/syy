@@ -41,6 +41,7 @@ public class PatientLv1 implements Serializable {
     private int alt;
     private double glu;
     private String result_binary;
+    private String reason;
     private String lv1_binary;
     private String lv2_binary;
     private String firstAssessDoc;

@@ -37,6 +37,7 @@
         <result property="alt" column="alt"></result>
         <result property="glu" column="glu"></result>
         <result property="result_binary" column="result_binary"></result>
+        <result property="reason" column="reason"></result>
         <result property="lv1_binary" column="lv1_binary"></result>
         <result property="lv2_binary" column="lv2_binary"></result>
         <result property="firstAssessDoc" column="firstAssessDoc"></result>
@@ -54,6 +55,11 @@
     <select id="findAllPatientNumber" resultType="Integer">
         select patient_number_lv1 from patient_lv1
     </select>
+
+    <select id="findAllAssessRecords" resultType="com.aoao.domain.PatientLv2">
+        select patient_number_lv2,represent from patient_lv2
+    </select>
+
     <select id="findPatientByPatientNumber" parameterType="Integer" resultMap="patient12Map">
         select * from patient_lv1 patient1 left outer join patient_lv2 patient2
         on patient1.patient_number_lv1 = patient2.patient_number_lv2
@@ -62,7 +68,7 @@
 
     <update id="updatePatientLv1Info" parameterType="com.aoao.domain.PatientLv1">
         update patient_lv1 patient1
-        set patient1.lv1_binary = #{lv1_binary},patient1.lv2_binary = #{lv2_binary},patient1.result_binary = #{result_binary},
+        set patient1.lv1_binary = #{lv1_binary},patient1.lv2_binary = #{lv2_binary},patient1.result_binary = #{result_binary},patient1.reason = #{reason},
         patient1.firstAssessDoc = #{firstAssessDoc},patient1.firstAssessDate = #{firstAssessDate},patient1.secondAssessDoc = #{secondAssessDoc},
         patient1.secondAssessDate = #{secondAssessDate}
         where patient1.patient_number_lv1 = #{patient_number_lv1}
