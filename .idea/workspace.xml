@@ -6,21 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff08d267-8f1e-4d55-a05a-7c01bd2d3a8d" name="Default" comment="7th commit">
+    <list default="true" id="ff08d267-8f1e-4d55-a05a-7c01bd2d3a8d" name="Default" comment="8th commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aoao/domain/PatientLv1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aoao/domain/PatientLv1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/com/aoao/dao/IPatientDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/com/aoao/dao/IPatientDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aoao/controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aoao/controller/PatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aoao/dao/IPatientDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aoao/dao/IPatientDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aoao/domain/PatientLv2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aoao/domain/PatientLv2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aoao/service/IPatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aoao/service/IPatientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aoao/service/impl/PatientServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aoao/service/impl/PatientServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/controller/PatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/dao/IPatientDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/dao/IPatientDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/dao/IPatientDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/dao/IPatientDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/domain/PatientLv2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/domain/PatientLv2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/service/IPatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/service/IPatientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/service/impl/PatientServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/service/impl/PatientServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aoao/domain/PatientLv1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aoao/domain/PatientLv1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/domain/PatientLv1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/syy_sqwz/WEB-INF/classes/com/aoao/domain/PatientLv1.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,23 +24,11 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/aoao/domain/PatientLv1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="48" column="35" lean-forward="true" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resource/com/aoao/dao/IPatientDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="1330">
               <caret line="70" column="154" selection-start-line="70" selection-start-column="154" selection-end-line="70" selection-end-column="154" />
             </state>
           </provider>
@@ -112,10 +89,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="592" />
-    <option name="y" value="207" />
-    <option name="width" value="1660" />
-    <option name="height" value="1029" />
+    <option name="x" value="291" />
+    <option name="y" value="176" />
+    <option name="width" value="1920" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -124,8 +101,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,6 +232,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -432,7 +409,9 @@
       <workItem from="1564064662634" duration="1121000" />
       <workItem from="1564103840514" duration="778000" />
       <workItem from="1564104664964" duration="13933000" />
-      <workItem from="1564230721129" duration="1087000" />
+      <workItem from="1564230721129" duration="1106000" />
+      <workItem from="1564364293620" duration="815000" />
+      <workItem from="1564580178889" duration="214000" />
     </task>
     <task id="LOCAL-00001" summary="4th commit">
       <created>1564065357837</created>
@@ -462,11 +441,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564117741427</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="8th commit">
+      <created>1564231825813</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1564231825813</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115757000" />
+    <option name="totallyTimeSpent" value="116805000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -478,10 +464,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="474" y="166" width="1328" height="823" extended-state="0" />
-    <editor active="true" />
+    <frame x="234" y="142" width="1536" height="824" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23307087" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20635995" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -491,7 +476,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329849" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33719248" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3367052" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -555,7 +540,8 @@
     <MESSAGE value="5th commit" />
     <MESSAGE value="6th commit" />
     <MESSAGE value="7th commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="7th commit" />
+    <MESSAGE value="8th commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="8th commit" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/aoao/domain/Patient3.java" />
@@ -646,6 +632,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/aoao/dao/IPatientDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/aoao/domain/PatientLv1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/aoao/domain/PatientLv2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -656,26 +659,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/aoao/domain/PatientLv1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="48" column="35" lean-forward="true" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/aoao/dao/IPatientDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resource/com/aoao/dao/IPatientDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="1330">
           <caret line="70" column="154" selection-start-line="70" selection-start-column="154" selection-end-line="70" selection-end-column="154" />
         </state>
       </provider>
