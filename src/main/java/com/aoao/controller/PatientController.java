@@ -1,9 +1,6 @@
 package com.aoao.controller;
 
-import com.aoao.domain.PatientLv1;
-import com.aoao.domain.PatientLv2;
-import com.aoao.domain.Suggestion;
-import com.aoao.domain.SuggestionIdList;
+import com.aoao.domain.*;
 import com.aoao.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,14 +25,9 @@ public class PatientController {
         return patientService.findAllPatientNumber();
     }
 
-    @RequestMapping(path = "/findAllAssessRecords")
-    public @ResponseBody List<PatientLv2> findAllAssessRecords(){
-        return patientService.findAllAssessRecords();
-    }
-
     @RequestMapping(path = "/findByPatientNumber")
-    public @ResponseBody PatientLv1 findPatientByPatientNumber(Integer patient_number_lv1){
-        PatientLv1 patient = patientService.findPatientByPatientNumber(patient_number_lv1);
+    public @ResponseBody PatientLv2X findPatientByPatientNumber(Integer patient_number_lv1){
+        PatientLv2X patient = patientService.findPatientByPatientNumber(patient_number_lv1);
         System.out.println(patient);
         return patient;
     }
@@ -46,35 +38,29 @@ public class PatientController {
         return patientService.updatePatientLv1Info(patientLv1);
     }
 
-    @RequestMapping(path = "/insertPatientLv1")
-    public @ResponseBody String insertPatientLv1Info(PatientLv1 patientLv1){
-        System.out.println("病人的一級表新增記錄....");
-        return patientService.insertPatientLv1Info(patientLv1);
-    }
+//    @RequestMapping(path = "/insertPatientLv1")
+//    public @ResponseBody String insertPatientLv1Info(PatientLv1 patientLv1){
+//        System.out.println("病人的一級表新增記錄....");
+//        return patientService.insertPatientLv1Info(patientLv1);
+//    }
 
     @RequestMapping(path = "/updatePatientLv2")
-    public @ResponseBody String updatePatientLv2Info(PatientLv2 patientLv2){
+    public @ResponseBody String updatePatientLv2Info(PatientLv2X patientLv2){
         System.out.println("病人的二級表更新記錄....");
         return patientService.updatePatientLv2Info(patientLv2);
     }
 
-    @RequestMapping(path = "/insertPatientLv2")
-    public @ResponseBody String insertPatientLv2Info(PatientLv2 patientLv2){
-        System.out.println("病人的二級表新增記錄....");
-        return patientService.insertPatientLv2Info(patientLv2);
-    }
+//    @RequestMapping(path = "/insertPatientLv2")
+//    public @ResponseBody String insertPatientLv2Info(PatientLv2 patientLv2){
+//        System.out.println("病人的二級表新增記錄....");
+//        return patientService.insertPatientLv2Info(patientLv2);
+//    }
 
-    @RequestMapping(path = "/deletePatientLv2")
-    public @ResponseBody String deletePatientLv2Info(PatientLv2 patientLv2){
-        System.out.println("病人的二級表刪除記錄....");
-        return patientService.deletePatientLv2Info(patientLv2);
-    }
-
-    @RequestMapping(path = "/deletePatientLv2ByPatientNumber")
-    public @ResponseBody String deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2) {
-        System.out.println("病人的二級表按住院號刪除記錄....");
-        return patientService.deletePatientLv2InfoWithPatientNumber(patientLv2);
-    }
+//    @RequestMapping(path = "/deletePatientLv2")
+//    public @ResponseBody String deletePatientLv2Info(PatientLv2 patientLv2){
+//        System.out.println("病人的二級表刪除記錄....");
+//        return patientService.deletePatientLv2Info(patientLv2);
+//    }
 
     @RequestMapping(path = "/findSuggestion")
     public @ResponseBody List<Suggestion> findSuggestionBySuggestionId(SuggestionIdList suggestionIdList){
@@ -82,5 +68,10 @@ public class PatientController {
         List<Suggestion> suggestions = patientService.findSuggestionBySuggestionId(suggestionIdList);
         System.out.println(suggestions);
         return suggestions;
+    }
+
+    @RequestMapping(path = "/findX")
+    public @ResponseBody PatientLv2X findX(int patient_number_lv2){
+        return patientService.findX(patient_number_lv2);
     }
 }

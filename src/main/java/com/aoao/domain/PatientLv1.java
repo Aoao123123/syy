@@ -48,7 +48,4 @@ public class PatientLv1 implements Serializable {
     private Date firstAssessDate;
     private String secondAssessDoc;
     private Date secondAssessDate;
-
-    private List<PatientLv2> patientLv2List;
-
 }
