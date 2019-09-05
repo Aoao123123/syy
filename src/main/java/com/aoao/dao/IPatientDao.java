@@ -2,6 +2,8 @@ package com.aoao.dao;
 
 import com.aoao.domain.PatientLv1;
 import com.aoao.domain.PatientLv2;
+import com.aoao.domain.SuggestionIdList;
+import com.aoao.domain.Suggestion;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -67,4 +69,6 @@ public interface IPatientDao {
      * @param patientLv2
      */
     void deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2);
+
+    List<Suggestion> findSuggestionBySuggestionId(List<String> suggestionIdList);
 }

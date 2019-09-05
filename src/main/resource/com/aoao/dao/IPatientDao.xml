@@ -52,6 +52,14 @@
         </collection>
     </resultMap>
 
+
+    <select id="findSuggestionBySuggestionId" parameterType="String" resultType="com.aoao.domain.Suggestion">
+        select * from suggestion where suggestion_id in
+            <foreach collection="list" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+    </select>
+
     <select id="findAllPatientNumber" resultType="Integer">
         select patient_number_lv1 from patient_lv1
     </select>

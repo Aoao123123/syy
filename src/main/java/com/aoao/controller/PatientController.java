@@ -2,12 +2,15 @@ package com.aoao.controller;
 
 import com.aoao.domain.PatientLv1;
 import com.aoao.domain.PatientLv2;
+import com.aoao.domain.Suggestion;
+import com.aoao.domain.SuggestionIdList;
 import com.aoao.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -71,5 +74,13 @@ public class PatientController {
     public @ResponseBody String deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2) {
         System.out.println("病人的二級表按住院號刪除記錄....");
         return patientService.deletePatientLv2InfoWithPatientNumber(patientLv2);
+    }
+
+    @RequestMapping(path = "/findSuggestion")
+    public @ResponseBody List<Suggestion> findSuggestionBySuggestionId(SuggestionIdList suggestionIdList){
+        System.out.println("查詢麻醉建議....");
+        List<Suggestion> suggestions = patientService.findSuggestionBySuggestionId(suggestionIdList);
+        System.out.println(suggestions);
+        return suggestions;
     }
 }

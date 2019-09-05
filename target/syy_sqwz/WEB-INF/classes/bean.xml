@@ -23,10 +23,10 @@
         <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
     </context:component-scan>
     <!--視圖解析器-->
-<!--    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-<!--        <property name="prefix" value="/WEB-INF/pages/"/>-->
-<!--        <property name="suffix" value=".jsp"/>-->
-<!--    </bean>-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 
     <!--開啟SpringMVC框架註解支持-->
     <mvc:annotation-driven/>

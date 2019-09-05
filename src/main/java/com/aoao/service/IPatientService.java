@@ -2,6 +2,8 @@ package com.aoao.service;
 
 import com.aoao.domain.PatientLv1;
 import com.aoao.domain.PatientLv2;
+import com.aoao.domain.SuggestionIdList;
+import com.aoao.domain.Suggestion;
 
 import java.util.List;
 
@@ -61,5 +63,7 @@ public interface IPatientService {
      * @param patientLv2
      */
     String deletePatientLv2InfoWithPatientNumber(PatientLv2 patientLv2);
+
+    List<Suggestion> findSuggestionBySuggestionId(SuggestionIdList suggestionIdList);
 
 }

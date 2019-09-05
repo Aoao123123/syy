@@ -3,6 +3,8 @@ package com.aoao.service.impl;
 import com.aoao.dao.IPatientDao;
 import com.aoao.domain.PatientLv1;
 import com.aoao.domain.PatientLv2;
+import com.aoao.domain.SuggestionIdList;
+import com.aoao.domain.Suggestion;
 import com.aoao.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -127,5 +129,11 @@ public class PatientServiceImpl implements IPatientService {
 
         patientDao.deletePatientLv2InfoWithPatientNumber(patientLv2);
         return "The recordings are successfully deleted from patient_lv2 according to the patient number";
+    }
+
+    @Override
+    public List<Suggestion> findSuggestionBySuggestionId(SuggestionIdList suggestionIdList) {
+
+        return patientDao.findSuggestionBySuggestionId(suggestionIdList.getSuggestionIdList());
     }
 }
