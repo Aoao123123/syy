@@ -26,14 +26,14 @@ public class PatientController {
     }
 
     @RequestMapping(path = "/findByPatientNumber")
-    public @ResponseBody PatientLv2X findPatientByPatientNumber(Integer patient_number_lv1){
-        PatientLv2X patient = patientService.findPatientByPatientNumber(patient_number_lv1);
+    public @ResponseBody PatientLv1 findPatientByPatientNumber(Integer patient_number_lv1){
+        PatientLv1 patient = patientService.findPatientByPatientNumber(patient_number_lv1);
         System.out.println(patient);
         return patient;
     }
 
     @RequestMapping(path = "/updatePatientLv1")
-    public @ResponseBody String updatePatientLv1Info(PatientLv1 patientLv1){
+    public @ResponseBody int updatePatientLv1Info(PatientLv1 patientLv1){
         System.out.println("病人的一級表更新記錄....");
         return patientService.updatePatientLv1Info(patientLv1);
     }
@@ -45,16 +45,16 @@ public class PatientController {
 //    }
 
     @RequestMapping(path = "/updatePatientLv2")
-    public @ResponseBody String updatePatientLv2Info(PatientLv2X patientLv2){
+    public @ResponseBody int updatePatientLv2Info(PatientLv2X patientLv2){
         System.out.println("病人的二級表更新記錄....");
         return patientService.updatePatientLv2Info(patientLv2);
     }
 
-//    @RequestMapping(path = "/insertPatientLv2")
-//    public @ResponseBody String insertPatientLv2Info(PatientLv2 patientLv2){
-//        System.out.println("病人的二級表新增記錄....");
-//        return patientService.insertPatientLv2Info(patientLv2);
-//    }
+    @RequestMapping(path = "/insertPatientLv2")
+    public @ResponseBody int insertPatientLv2Info(PatientLv2X patientLv2){
+        System.out.println("病人的二級表新增記錄....");
+        return patientService.insertPatientLv2Info(patientLv2);
+    }
 
 //    @RequestMapping(path = "/deletePatientLv2")
 //    public @ResponseBody String deletePatientLv2Info(PatientLv2 patientLv2){

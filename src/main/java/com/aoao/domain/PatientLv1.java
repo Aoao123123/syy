@@ -26,17 +26,19 @@ public class PatientLv1 implements Serializable {
     private String assume;
     private String chief_complaint;
     private String others;
-    private int na;
+    private double na;
     private double k;
-    private int cl;
+    private double cl;
     private double wbc;
     private int hb;
     private int plts;
     private double pt;
     private double aptt;
     private double bun;
-    private int creat;
-    private int tbil;
+    private double creat;
+    private double co2;
+    private double tp;
+    private double alb;
     private int ast;
     private int alt;
     private double glu;
@@ -48,4 +50,6 @@ public class PatientLv1 implements Serializable {
     private Date firstAssessDate;
     private String secondAssessDoc;
     private Date secondAssessDate;
+
+    private PatientLv2X patientLv2X;
 }

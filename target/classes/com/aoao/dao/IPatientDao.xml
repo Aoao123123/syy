@@ -4,147 +4,112 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.aoao.dao.IPatientDao">
-<!--    <resultMap id="patient12Map" type="com.aoao.domain.PatientLv1">-->
-<!--        <result property="patient_number_lv1" column="patient_number_lv1"></result>-->
-<!--        <result property="name" column="name"></result>-->
-<!--        <result property="department" column="department"></result>-->
-<!--        <result property="bed_number" column="bed_number"></result>-->
-<!--        <result property="age" column="age"></result>-->
-<!--        <result property="gender" column="gender"></result>-->
-<!--        <result property="height" column="height"></result>-->
-<!--        <result property="weight" column="weight"></result>-->
-<!--        <result property="sbp" column="sbp"></result>-->
-<!--        <result property="dbp" column="dbp"></result>-->
-<!--        <result property="r" column="r"></result>-->
-<!--        <result property="p" column="p"></result>-->
-<!--        <result property="t" column="t"></result>-->
-<!--        <result property="pre_diagnose" column="pre_diagnose"></result>-->
-<!--        <result property="assume" column="assume"></result>-->
-<!--        <result property="chief_complaint" column="chief_complaint"></result>-->
-<!--        <result property="others" column="others"></result>-->
-<!--        <result property="na" column="na"></result>-->
-<!--        <result property="k" column="k"></result>-->
-<!--        <result property="cl" column="cl"></result>-->
-<!--        <result property="wbc" column="wbc"></result>-->
-<!--        <result property="hb" column="hb"></result>-->
-<!--        <result property="plts" column="plts"></result>-->
-<!--        <result property="pt" column="pt"></result>-->
-<!--        <result property="aptt" column="aptt"></result>-->
-<!--        <result property="bun" column="bun"></result>-->
-<!--        <result property="creat" column="creat"></result>-->
-<!--        <result property="tbil" column="tbil"></result>-->
-<!--        <result property="ast" column="ast"></result>-->
-<!--        <result property="alt" column="alt"></result>-->
-<!--        <result property="glu" column="glu"></result>-->
-<!--        <result property="result_binary" column="result_binary"></result>-->
-<!--        <result property="reason" column="reason"></result>-->
-<!--        <result property="lv1_binary" column="lv1_binary"></result>-->
-<!--        <result property="lv2_binary" column="lv2_binary"></result>-->
-<!--        <result property="firstAssessDoc" column="firstAssessDoc"></result>-->
-<!--        <result property="firstAssessDate" column="firstAssessDate"></result>-->
-<!--        <result property="secondAssessDoc" column="secondAssessDoc"></result>-->
-<!--        <result property="secondAssessDate" column="secondAssessDate"></result>-->
-<!--        <collection property="patientLv2List" ofType="com.aoao.domain.PatientLv2">-->
-<!--            <result column="patient_number_lv2" property="patient_number_lv2"></result>-->
-<!--            <result column="checkbox_binary" property="checkbox_binary"></result>-->
-<!--            <result column="remark" property="remark"></result>-->
-<!--            <result column="represent" property="represent"></result>-->
-<!--        </collection>-->
-<!--    </resultMap>-->
 
-    <resultMap id="patient12Map" type="com.aoao.domain.PatientLv2X">
-        <result property="patient_number_lv2" column="patient_number_lv2"></result>
-        <result property="duoxuan" column="duoxuan"></result>
-        <result property="data1" column="data1"></result>
-        <result property="data2" column="data2"></result>
-        <result property="data3" column="data3"></result>
-        <result property="data4" column="data4"></result>
-        <result property="data5" column="data5"></result>
-        <result property="data6" column="data6"></result>
-        <result property="data7" column="data7"></result>
-        <result property="data8" column="data8"></result>
-        <result property="data9" column="data9"></result>
-        <result property="data10" column="data10"></result>
-        <result property="data11" column="data11"></result>
-        <result property="data12" column="data12"></result>
-        <result property="data13" column="data13"></result>
-        <result property="data14" column="data14"></result>
-        <result property="data15" column="data15"></result>
-        <result property="data16" column="data16"></result>
-        <result property="data17" column="data17"></result>
-        <result property="data18" column="data18"></result>
-        <result property="data19" column="data19"></result>
-        <result property="data20" column="data20"></result>
-        <result property="data21" column="data21"></result>
-        <result property="data22" column="data22"></result>
-        <result property="data23" column="data23"></result>
-        <result property="data24" column="data24"></result>
-        <result property="data25" column="data25"></result>
-        <result property="data26" column="data26"></result>
-        <result property="data27" column="data27"></result>
-        <result property="data28" column="data28"></result>
-        <result property="data29" column="data29"></result>
-        <result property="data30" column="data30"></result>
-        <result property="data31" column="data31"></result>
-        <result property="data32" column="data32"></result>
-        <result property="data33" column="data33"></result>
-        <result property="data34" column="data34"></result>
-        <result property="data35" column="data35"></result>
-        <result property="data36" column="data36"></result>
-        <result property="data37" column="data37"></result>
-        <result property="data38" column="data38"></result>
-        <result property="data39" column="data39"></result>
-        <result property="data40" column="data40"></result>
-        <result property="data41" column="data41"></result>
-        <result property="data42" column="data42"></result>
-        <result property="data43" column="data43"></result>
-        <result property="data44" column="data44"></result>
-        <result property="data45" column="data45"></result>
-        <result property="data46" column="data46"></result>
-        <result property="data47" column="data47"></result>
-        <result property="data48" column="data48"></result>
-        <result property="data49" column="data49"></result>
-        <result property="data50" column="data50"></result>
-        <association property="patientLv1" column="patient_number_lv1" javaType="com.aoao.domain.PatientLv1">
-            <result property="patient_number_lv1" column="patient_number_lv1"></result>
-            <result property="name" column="name"></result>
-            <result property="department" column="department"></result>
-            <result property="bed_number" column="bed_number"></result>
-            <result property="age" column="age"></result>
-            <result property="gender" column="gender"></result>
-            <result property="height" column="height"></result>
-            <result property="weight" column="weight"></result>
-            <result property="sbp" column="sbp"></result>
-            <result property="dbp" column="dbp"></result>
-            <result property="r" column="r"></result>
-            <result property="p" column="p"></result>
-            <result property="t" column="t"></result>
-            <result property="pre_diagnose" column="pre_diagnose"></result>
-            <result property="assume" column="assume"></result>
-            <result property="chief_complaint" column="chief_complaint"></result>
-            <result property="others" column="others"></result>
-            <result property="na" column="na"></result>
-            <result property="k" column="k"></result>
-            <result property="cl" column="cl"></result>
-            <result property="wbc" column="wbc"></result>
-            <result property="hb" column="hb"></result>
-            <result property="plts" column="plts"></result>
-            <result property="pt" column="pt"></result>
-            <result property="aptt" column="aptt"></result>
-            <result property="bun" column="bun"></result>
-            <result property="creat" column="creat"></result>
-            <result property="tbil" column="tbil"></result>
-            <result property="ast" column="ast"></result>
-            <result property="alt" column="alt"></result>
-            <result property="glu" column="glu"></result>
-            <result property="result_binary" column="result_binary"></result>
-            <result property="reason" column="reason"></result>
-            <result property="lv1_binary" column="lv1_binary"></result>
-            <result property="lv2_binary" column="lv2_binary"></result>
-            <result property="firstAssessDoc" column="firstAssessDoc"></result>
-            <result property="firstAssessDate" column="firstAssessDate"></result>
-            <result property="secondAssessDoc" column="secondAssessDoc"></result>
-            <result property="secondAssessDate" column="secondAssessDate"></result>
+    <resultMap id="patient12Map" type="com.aoao.domain.PatientLv1">
+        <result property="patient_number_lv1" column="patient_number_lv1"></result>
+        <result property="name" column="name"></result>
+        <result property="department" column="department"></result>
+        <result property="bed_number" column="bed_number"></result>
+        <result property="age" column="age"></result>
+        <result property="gender" column="gender"></result>
+        <result property="height" column="height"></result>
+        <result property="weight" column="weight"></result>
+        <result property="sbp" column="sbp"></result>
+        <result property="dbp" column="dbp"></result>
+        <result property="r" column="r"></result>
+        <result property="p" column="p"></result>
+        <result property="t" column="t"></result>
+        <result property="pre_diagnose" column="pre_diagnose"></result>
+        <result property="assume" column="assume"></result>
+        <result property="chief_complaint" column="chief_complaint"></result>
+        <result property="others" column="others"></result>
+        <result property="na" column="na"></result>
+        <result property="k" column="k"></result>
+        <result property="cl" column="cl"></result>
+        <result property="wbc" column="wbc"></result>
+        <result property="hb" column="hb"></result>
+        <result property="plts" column="plts"></result>
+        <result property="pt" column="pt"></result>
+        <result property="aptt" column="aptt"></result>
+        <result property="bun" column="bun"></result>
+        <result property="creat" column="creat"></result>
+        <result property="co2" column="co2"></result>
+        <result property="tp" column="tp"></result>
+        <result property="alb" column="alb"></result>
+        <result property="ast" column="ast"></result>
+        <result property="alt" column="alt"></result>
+        <result property="glu" column="glu"></result>
+        <result property="result_binary" column="result_binary"></result>
+        <result property="reason" column="reason"></result>
+        <result property="lv1_binary" column="lv1_binary"></result>
+        <result property="lv2_binary" column="lv2_binary"></result>
+        <result property="firstAssessDoc" column="firstAssessDoc"></result>
+        <result property="firstAssessDate" column="firstAssessDate"></result>
+        <result property="secondAssessDoc" column="secondAssessDoc"></result>
+        <result property="secondAssessDate" column="secondAssessDate"></result>
+        <association property="patientLv2X" column="patient_number_lv2" javaType="com.aoao.domain.PatientLv2X">
+            <result property="patient_number_lv2" column="patient_number_lv2"></result>
+            <result property="duoxuan" column="duoxuan"></result>
+            <result property="data1" column="data1"></result>
+            <result property="data2" column="data2"></result>
+            <result property="data3" column="data3"></result>
+            <result property="data4" column="data4"></result>
+            <result property="data5" column="data5"></result>
+            <result property="data6" column="data6"></result>
+            <result property="data7" column="data7"></result>
+            <result property="data8" column="data8"></result>
+            <result property="data9" column="data9"></result>
+            <result property="data10" column="data10"></result>
+            <result property="data11" column="data11"></result>
+            <result property="data12" column="data12"></result>
+            <result property="data13" column="data13"></result>
+            <result property="data14" column="data14"></result>
+            <result property="data15" column="data15"></result>
+            <result property="data16" column="data16"></result>
+            <result property="data17" column="data17"></result>
+            <result property="data18" column="data18"></result>
+            <result property="data19" column="data19"></result>
+            <result property="data20" column="data20"></result>
+            <result property="data21" column="data21"></result>
+            <result property="data22" column="data22"></result>
+            <result property="data23" column="data23"></result>
+            <result property="data24" column="data24"></result>
+            <result property="data25" column="data25"></result>
+            <result property="data26" column="data26"></result>
+            <result property="data27" column="data27"></result>
+            <result property="data28" column="data28"></result>
+            <result property="data29" column="data29"></result>
+            <result property="data30" column="data30"></result>
+            <result property="data31" column="data31"></result>
+            <result property="data32" column="data32"></result>
+            <result property="data33" column="data33"></result>
+            <result property="data34" column="data34"></result>
+            <result property="data35" column="data35"></result>
+            <result property="data36" column="data36"></result>
+            <result property="data37" column="data37"></result>
+            <result property="data38" column="data38"></result>
+            <result property="data39" column="data39"></result>
+            <result property="data40" column="data40"></result>
+            <result property="data41" column="data41"></result>
+            <result property="data42" column="data42"></result>
+            <result property="data43" column="data43"></result>
+            <result property="data44" column="data44"></result>
+            <result property="data45" column="data45"></result>
+            <result property="data46" column="data46"></result>
+            <result property="data47" column="data47"></result>
+            <result property="data48" column="data48"></result>
+            <result property="data49" column="data49"></result>
+            <result property="data50" column="data50"></result>
+            <result property="data50" column="data51"></result>
+            <result property="data50" column="data52"></result>
+            <result property="data50" column="data53"></result>
+            <result property="data50" column="data54"></result>
+            <result property="data50" column="data55"></result>
+            <result property="data50" column="data56"></result>
+            <result property="data50" column="data57"></result>
+            <result property="data50" column="data58"></result>
+            <result property="data50" column="data59"></result>
+            <result property="data50" column="data60"></result>
         </association>
     </resultMap>
 
@@ -163,8 +128,12 @@
         select patient_number_lv1 from patient_lv1
     </select>
 
+    <select id="findAllDiagnosedPatientNumber" resultType="Integer">
+        select patient_number_lv2 from patient_lv2_x
+    </select>
+
     <select id="findPatientByPatientNumber" parameterType="Integer" resultMap="patient12Map">
-        select * from patient_lv1,patient_lv2_x where patient_lv1.patient_number_lv1 = patient_lv2_x.patient_number_lv2 and patient_lv1.patient_number_lv1 = #{patient_number_lv1}
+        select * from patient_lv1 left join patient_lv2_x on patient_lv1.patient_number_lv1 = patient_lv2_x.patient_number_lv2 where patient_lv1.patient_number_lv1 = #{patient_number_lv1}
     </select>
 
     <update id="updatePatientLv1Info" parameterType="com.aoao.domain.PatientLv1">
@@ -180,9 +149,135 @@
 <!--    </insert>-->
 
     <update id="updatePatientLv2Info" parameterType="com.aoao.domain.PatientLv2X">
-
+        update patient_lv2_x
+        set data1 = #{data1},
+        data2 = #{data2},
+        data3 = #{data3},
+        data4 = #{data4},
+        data5 = #{data5},
+        data6 = #{data6},
+        data7 = #{data7},
+        data8 = #{data8},
+        data9 = #{data9},
+        data10 = #{data10},
+        data11 = #{data11},
+        data12 = #{data12},
+        data13 = #{data13},
+        data14 = #{data14},
+        data15 = #{data15},
+        data16 = #{data16},
+        data17 = #{data17},
+        data18 = #{data18},
+        data19 = #{data19},
+        data20 = #{data20},
+        data21 = #{data21},
+        data22 = #{data22},
+        data23 = #{data23},
+        data24 = #{data24},
+        data25 = #{data25},
+        data26 = #{data26},
+        data27 = #{data27},
+        data28 = #{data28},
+        data29 = #{data29},
+        data30 = #{data30},
+        data31 = #{data31},
+        data32 = #{data32},
+        data33 = #{data33},
+        data34 = #{data34},
+        data35 = #{data35},
+        data36 = #{data36},
+        data37 = #{data37},
+        data38 = #{data38},
+        data39 = #{data39},
+        data40 = #{data40},
+        data41 = #{data41},
+        data42 = #{data42},
+        data43 = #{data43},
+        data44 = #{data44},
+        data45 = #{data45},
+        data46 = #{data46},
+        data47 = #{data47},
+        data48 = #{data48},
+        data49 = #{data49},
+        data50 = #{data50},
+        data51 = #{data51},
+        data52 = #{data52},
+        data53 = #{data53},
+        data54 = #{data54},
+        data55 = #{data55},
+        data56 = #{data56},
+        data57 = #{data57},
+        data58 = #{data58},
+        data59 = #{data59},
+        data60 = #{data60}
+        where patient_number_lv2 = #{patient_number_lv2}
     </update>
 
+    <insert id="insertPatientLv2Info" parameterType="com.aoao.domain.PatientLv2X">
+        insert into patient_lv2_x value(#{patient_number_lv2},#{duoxuan},
+        #{data1},
+        #{data2},
+        #{data3},
+        #{data4},
+        #{data5},
+        #{data6},
+        #{data7},
+        #{data8},
+        #{data9},
+        #{data10},
+        #{data11},
+        #{data12},
+        #{data13},
+        #{data14},
+        #{data15},
+        #{data16},
+        #{data17},
+        #{data18},
+        #{data19},
+        #{data20},
+        #{data21},
+        #{data22},
+        #{data23},
+        #{data24},
+        #{data25},
+        #{data26},
+        #{data27},
+        #{data28},
+        #{data29},
+        #{data30},
+        #{data31},
+        #{data32},
+        #{data33},
+        #{data34},
+        #{data35},
+        #{data36},
+        #{data37},
+        #{data38},
+        #{data39},
+        #{data40},
+        #{data41},
+        #{data42},
+        #{data43},
+        #{data44},
+        #{data45},
+        #{data46},
+        #{data47},
+        #{data48},
+        #{data49},
+        #{data50},
+        #{data50},
+        #{data50},
+        #{data51},
+        #{data52},
+        #{data53},
+        #{data54},
+        #{data55},
+        #{data56},
+        #{data57},
+        #{data58},
+        #{data59},
+        #{data60})
+    </insert>
 <!--    <delete id="deletePatientLv2" parameterType="com.aoao.domain.PatientLv2">-->
 <!--        delete from patient_lv2_x where patient_number_lv2 = #{patient_number_lv2}-->
 <!--    </delete>-->

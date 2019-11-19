@@ -19,11 +19,17 @@ public interface IPatientDao {
     List<Integer> findAllPatientNumber();
 
     /**
+     * 查詢所有問診過病人的住院號
+     * @return
+     */
+    List<Integer> findAllDiagnosedPatientNumber();
+
+    /**
      * 根據住院號查詢病人
      * @param patient_number_lv1 病人的住院號
      * @return
      */
-    PatientLv2X findPatientByPatientNumber(Integer patient_number_lv1);
+    PatientLv1 findPatientByPatientNumber(Integer patient_number_lv1);
 
 //    /**
 //     * 增加病人一級表記錄X
@@ -43,11 +49,11 @@ public interface IPatientDao {
      */
     void updatePatientLv2Info(PatientLv2X patientLv2);
 
-//    /**
-//     * 增加新的病人二級表記錄
-//     * @param patientLv2
-//     */
-//    void insertPatientLv2Info(PatientLv2 patientLv2);
+    /**
+     * 增加新的病人二級表記錄
+     * @param patientLv2
+     */
+    void insertPatientLv2Info(PatientLv2X patientLv2);
 
 //    /**
 //     * 刪除病人二級表記錄

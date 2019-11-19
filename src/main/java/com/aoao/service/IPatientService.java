@@ -13,17 +13,23 @@ public interface IPatientService {
     List<Integer> findAllPatientNumber();
 
     /**
+     * 查詢所有問診過病人的住院號
+     * @return
+     */
+    List<Integer> findAllDiagnosedPatientNumber();
+
+    /**
      * 根據住院號查詢病人記錄
      * @param patient_number_lv1
      * @return
      */
-    PatientLv2X findPatientByPatientNumber(Integer patient_number_lv1);
+    PatientLv1 findPatientByPatientNumber(Integer patient_number_lv1);
 
     /**
      * 更新病人一級表記錄
      * @param patientLv1
      */
-    String updatePatientLv1Info(PatientLv1 patientLv1);
+    int updatePatientLv1Info(PatientLv1 patientLv1);
 
 //    /**
 //     * 增加病人一級表記錄
@@ -35,13 +41,13 @@ public interface IPatientService {
      * 更新病人二級表記錄
      * @param patientLv2
      */
-    String updatePatientLv2Info(PatientLv2X patientLv2);
+    int updatePatientLv2Info(PatientLv2X patientLv2);
 
-//    /**
-//     * 增加新的病人二級表記錄
-//     * @param patientLv2
-//     */
-//    String insertPatientLv2Info(PatientLv2 patientLv2);
+    /**
+     * 增加新的病人二級表記錄
+     * @param patientLv2
+     */
+    int insertPatientLv2Info(PatientLv2X patientLv2);
 //
 //    /**
 //     * 刪除病人二級表記錄

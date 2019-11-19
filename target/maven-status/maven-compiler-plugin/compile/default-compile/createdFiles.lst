@@ -1,0 +1,10 @@
+com\aoao\domain\PatientLv2.class
+com\aoao\service\impl\PatientServiceImpl.class
+com\aoao\domain\PatientLv1.class
+com\aoao\controller\PatientController.class
+com\aoao\domain\Suggestion.class
+com\aoao\dao\IPatientDao.class
+com\aoao\domain\SuggestionIdList.class
+com\aoao\controller\JsonSupportAdvice.class
+com\aoao\domain\PatientLv2X.class
+com\aoao\service\IPatientService.class

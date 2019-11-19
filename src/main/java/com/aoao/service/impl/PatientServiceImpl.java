@@ -26,7 +26,12 @@ public class PatientServiceImpl implements IPatientService {
     }
 
     @Override
-    public PatientLv2X findPatientByPatientNumber(Integer patient_number_lv1) {
+    public List<Integer> findAllDiagnosedPatientNumber() {
+        return patientDao.findAllDiagnosedPatientNumber();
+    }
+
+    @Override
+    public PatientLv1 findPatientByPatientNumber(Integer patient_number_lv1) {
         if (patient_number_lv1 == 0){
             return null;
         }
@@ -35,18 +40,18 @@ public class PatientServiceImpl implements IPatientService {
     }
 
     @Override
-    public String updatePatientLv1Info(PatientLv1 patientLv1) {
+    public int updatePatientLv1Info(PatientLv1 patientLv1) {
         if (patientLv1.getPatient_number_lv1() == 0){
-            return "incoming patient_number_lv1 is null";
+            return -2;
         }
 
         List<Integer> listPatientNumber = findAllPatientNumber();
         if (!listPatientNumber.contains(patientLv1.getPatient_number_lv1())){
-            return "This patient doesn't exist";
+            return -1;
         }
 
         patientDao.updatePatientLv1Info(patientLv1);
-        return "A recording in patient_lv1 is updated successfully";
+        return 0;
     }
 
 //    @Override
@@ -61,35 +66,34 @@ public class PatientServiceImpl implements IPatientService {
 //    }
 
     @Override
-    public String updatePatientLv2Info(PatientLv2X patientLv2) {
+    public int updatePatientLv2Info(PatientLv2X patientLv2) {
         if (patientLv2.getPatient_number_lv2() == 0){
-            return "incoming patient_number_lv2 is null";
+            return -2;
         }
 
-        List<Integer> listPatientNumber = findAllPatientNumber();
-        if (!listPatientNumber.contains(patientLv2.getPatient_number_lv2())){
-            return "This patient doesn't exist";
+        List<Integer> listDiagnosedPatientNumber = findAllDiagnosedPatientNumber();
+        if (!listDiagnosedPatientNumber.contains(patientLv2.getPatient_number_lv2())){
+            return -1;
         }
 
         patientDao.updatePatientLv2Info(patientLv2);
-        return "A recording in patient_lv2 is updated successfully";
+        return 0;
     }
 
-//    @Override
-//    public String insertPatientLv2Info(PatientLv2 patientLv2) {
-//        if (patientLv2.getPatient_number_lv2() == 0 || patientLv2.getRepresent() == null
-//            || patientLv2.getCheckbox_binary() == null){
-//            return "patient_number_lv2,represent or checkbox_binary is null";
-//        }
-//
-//        List<PatientLv2> listAllAccessRecords = findAllAssessRecords();
-//        if (listAllAccessRecords.contains(patientLv2)){
-//            return "This record has already been assessed";
-//        }
-//
-//        patientDao.insertPatientLv2Info(patientLv2);
-//        return "The record is inserted successfully in patient_lv2";
-//    }
+    @Override
+    public int insertPatientLv2Info(PatientLv2X patientLv2) {
+        if (patientLv2.getPatient_number_lv2() == 0){
+            return -2;
+        }
+
+        List<Integer> listDiagnosedPatientNumber = findAllDiagnosedPatientNumber();
+        if (listDiagnosedPatientNumber.contains(patientLv2.getPatient_number_lv2())){
+            return -1;
+        }
+
+        patientDao.insertPatientLv2Info(patientLv2);
+        return 0;
+    }
 //
 //    @Override
 //    public String deletePatientLv2Info(PatientLv2 patientLv2) {

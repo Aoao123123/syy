@@ -59,6 +59,14 @@ public class PatientLv2X implements Serializable {
     private String data48;
     private String data49;
     private String data50;
-
-    private PatientLv1 patientLv1;
+    private String data51;
+    private String data52;
+    private String data53;
+    private String data54;
+    private String data55;
+    private String data56;
+    private String data57;
+    private String data58;
+    private String data59;
+    private String data60;
 }
