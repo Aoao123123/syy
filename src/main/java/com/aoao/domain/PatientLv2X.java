@@ -68,5 +68,6 @@ public class PatientLv2X implements Serializable {
     private String data57;
     private String data58;
     private String data59;
+    //儲存多選的字段
     private String data60;
 }

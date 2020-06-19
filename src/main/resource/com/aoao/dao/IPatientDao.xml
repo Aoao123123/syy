@@ -100,16 +100,16 @@
             <result property="data48" column="data48"></result>
             <result property="data49" column="data49"></result>
             <result property="data50" column="data50"></result>
-            <result property="data50" column="data51"></result>
-            <result property="data50" column="data52"></result>
-            <result property="data50" column="data53"></result>
-            <result property="data50" column="data54"></result>
-            <result property="data50" column="data55"></result>
-            <result property="data50" column="data56"></result>
-            <result property="data50" column="data57"></result>
-            <result property="data50" column="data58"></result>
-            <result property="data50" column="data59"></result>
-            <result property="data50" column="data60"></result>
+            <result property="data51" column="data51"></result>
+            <result property="data52" column="data52"></result>
+            <result property="data53" column="data53"></result>
+            <result property="data54" column="data54"></result>
+            <result property="data55" column="data55"></result>
+            <result property="data56" column="data56"></result>
+            <result property="data57" column="data57"></result>
+            <result property="data58" column="data58"></result>
+            <result property="data59" column="data59"></result>
+            <result property="data60" column="data60"></result>
         </association>
     </resultMap>
 
